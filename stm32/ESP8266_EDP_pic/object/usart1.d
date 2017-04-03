@@ -1,5 +1,4 @@
-..\object\usart1.o: ..\Driver\usart1.c
-..\object\usart1.o: ..\Driver\main.h
+..\object\usart1.o: ..\Hal\usart1.c
 ..\object\usart1.o: ..\Libraries\CMSIS\stm32f10x.h
 ..\object\usart1.o: ..\Libraries\CMSIS\core_cm3.h
 ..\object\usart1.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\stdint.h
@@ -29,15 +28,5 @@
 ..\object\usart1.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 ..\object\usart1.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 ..\object\usart1.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
+..\object\usart1.o: ..\Hal\usart1.h
 ..\object\usart1.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\stdio.h
-..\object\usart1.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\stdlib.h
-..\object\usart1.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\string.h
-..\object\usart1.o: ..\Driver\usart1.h
-..\object\usart1.o: ..\Driver\usart2.h
-..\object\usart1.o: ..\EDP\edpkit.h
-..\object\usart1.o: ..\EDP\Common.h
-..\object\usart1.o: ..\EDP\cJSON.h
-..\object\usart1.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\time.h
-..\object\usart1.o: ..\Driver\led.h
-..\object\usart1.o: ..\Driver\key.h
-..\object\usart1.o: ..\Network\esp8266.h

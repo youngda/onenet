@@ -184,7 +184,7 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
   if ((((uint32_t)GPIO_InitStruct->GPIO_Mode) & ((uint32_t)0x10)) != 0x00)
   { 
     /* Check the parameters */
-    assert_param(IS_GPIO_SPEED(GPIO_InitStruct->GPIO_Speed));
+		assert_param(IS_GPIO_SPEED(GPIO_InitStruct->GPIO_Speed));
     /* Output mode */
     currentmode |= (uint32_t)GPIO_InitStruct->GPIO_Speed;
   }
@@ -195,7 +195,7 @@ void GPIO_Init(GPIO_TypeDef* GPIOx, GPIO_InitTypeDef* GPIO_InitStruct)
     tmpreg = GPIOx->CRL;
     for (pinpos = 0x00; pinpos < 0x08; pinpos++)
     {
-      pos = ((uint32_t)0x01) << pinpos;
+			pos = ((uint32_t)0x01) << pinpos;
       /* Get the port pins position */
       currentpin = (GPIO_InitStruct->GPIO_Pin) & pos;
       if (currentpin == pos)

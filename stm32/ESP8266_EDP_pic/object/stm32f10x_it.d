@@ -29,8 +29,5 @@
 ..\object\stm32f10x_it.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 ..\object\stm32f10x_it.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 ..\object\stm32f10x_it.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
-..\object\stm32f10x_it.o: ..\Driver\usart1.h
-..\object\stm32f10x_it.o: ..\Driver\usart2.h
-..\object\stm32f10x_it.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\stdlib.h
-..\object\stm32f10x_it.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\stdio.h
-..\object\stm32f10x_it.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\string.h
+..\object\stm32f10x_it.o: ..\Hal\usart1.h
+..\object\stm32f10x_it.o: ..\Hal\usart2.h

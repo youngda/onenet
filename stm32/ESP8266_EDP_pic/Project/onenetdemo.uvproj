@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>OneNET_Demo_ESP8266_EDP_Led</TargetName>
+      <TargetName>ESP8266_Picture</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <TargetOption>
@@ -130,7 +130,7 @@
           <Target>
             <UseTarget>1</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>0</RunToMain>
+            <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
             <RestoreWatchpoints>1</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
@@ -163,7 +163,7 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4104</DriverSelection>
+            <DriverSelection>4105</DriverSelection>
           </Flash1>
           <Flash2>STLink\ST-LINKIII-KEIL_SWO.dll</Flash2>
           <Flash3>"" ()</Flash3>
@@ -350,7 +350,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD, USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Driver;..\object;..\Project;..\User;..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\Libraries\STM32F10x_StdPeriph_Driver\src;..\Libraries\CMSIS\startup\arm;..\EDP;..\Network</IncludePath>
+              <IncludePath>..\Hal;..\Utils;..\Protocol\edp;..\object;..\Project;..\User;..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\Libraries\STM32F10x_StdPeriph_Driver\src;..\Libraries\CMSIS\startup\arm;..\EDP;..\Network\esp8266</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -464,52 +464,60 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>DRIVE</GroupName>
+          <GroupName>DEVICES</GroupName>
+        </Group>
+        <Group>
+          <GroupName>HAL</GroupName>
           <Files>
             <File>
               <FileName>usart1.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Driver\usart1.c</FilePath>
+              <FilePath>..\Hal\usart1.c</FilePath>
             </File>
             <File>
               <FileName>usart2.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Driver\usart2.c</FilePath>
-            </File>
-            <File>
-              <FileName>led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Driver\led.c</FilePath>
-            </File>
-            <File>
-              <FileName>key.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Driver\key.c</FilePath>
+              <FilePath>..\Hal\usart2.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>EDP</GroupName>
+          <GroupName>PROTOCOL</GroupName>
+          <Files>
+            <File>
+              <FileName>EdpKit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Protocol\edp\EdpKit.c</FilePath>
+            </File>
+            <File>
+              <FileName>EdpDemo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Protocol\edp\EdpDemo.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>UTILS</GroupName>
           <Files>
             <File>
               <FileName>cJSON.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\EDP\cJSON.c</FilePath>
+              <FilePath>..\Utils\cJSON.c</FilePath>
             </File>
             <File>
-              <FileName>EdpKit.c</FileName>
+              <FileName>utils.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\EDP\EdpKit.c</FilePath>
+              <FilePath>..\Utils\utils.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>Network</GroupName>
+          <GroupName>NETWORK</GroupName>
           <Files>
             <File>
               <FileName>esp8266.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Network\esp8266.c</FilePath>
+              <FilePath>..\Network\esp8266\esp8266.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,11 +1,11 @@
 /**
   ******************************************************************************
-  * @file    Project/STM32F10x_StdPeriph_Template/stm32f10x_it.c 
+  * @file    Project/STM32F10x_StdPeriph_Template/stm32f10x_it.c
   * @author  MCD Application Team
   * @version V3.5.0
   * @date    08-April-2011
   * @brief   Main Interrupt Service Routines.
-  *          This file provides template for all exceptions handler and 
+  *          This file provides template for all exceptions handler and
   *          peripherals interrupt service routine.
   ******************************************************************************
   * @attention
@@ -25,9 +25,7 @@
 #include "stm32f10x_it.h"
 #include "usart1.h"
 #include "usart2.h"
-#include "stdlib.h"
-#include "stdio.h"
-#include "string.h"
+
 extern uint32_t SystickTime;
 extern __IO uint32_t TimeDisplay;
 
@@ -62,10 +60,10 @@ void NMI_Handler(void)
   */
 void HardFault_Handler(void)
 {
-  /* Go to infinite loop when Hard Fault exception occurs */
-  while (1)
-  {
-  }
+    /* Go to infinite loop when Hard Fault exception occurs */
+    while (1)
+    {
+    }
 }
 
 /**
@@ -75,10 +73,10 @@ void HardFault_Handler(void)
   */
 void MemManage_Handler(void)
 {
-  /* Go to infinite loop when Memory Manage exception occurs */
-  while (1)
-  {
-  }
+    /* Go to infinite loop when Memory Manage exception occurs */
+    while (1)
+    {
+    }
 }
 
 /**
@@ -88,10 +86,10 @@ void MemManage_Handler(void)
   */
 void BusFault_Handler(void)
 {
-  /* Go to infinite loop when Bus Fault exception occurs */
-  while (1)
-  {
-  }
+    /* Go to infinite loop when Bus Fault exception occurs */
+    while (1)
+    {
+    }
 }
 
 /**
@@ -101,10 +99,10 @@ void BusFault_Handler(void)
   */
 void UsageFault_Handler(void)
 {
-  /* Go to infinite loop when Usage Fault exception occurs */
-  while (1)
-  {
-  }
+    /* Go to infinite loop when Usage Fault exception occurs */
+    while (1)
+    {
+    }
 }
 
 /**
@@ -152,10 +150,9 @@ void SysTick_Handler(void)
 /*  file (startup_stm32f10x_xx.s).                                            */
 /******************************************************************************/
 
-
 void EXTI0_IRQHandler(void)
 {
-    
+
 }
 
 /**
@@ -166,7 +163,7 @@ void EXTI0_IRQHandler(void)
 void USART1_IRQHandler(void)
 {
 	#if 0
-		unsigned int data;
+    unsigned int data;
 
     if(USART1->SR & 0x0F)
     {
@@ -175,13 +172,15 @@ void USART1_IRQHandler(void)
         data = USART1->DR;
     }
     else if(USART1->SR & USART_FLAG_RXNE)      //Receive Data Reg Full Flag
-    {		
+    {
         data = USART1->DR;
-				//usart1_putrxchar(data);     //Insert received character into buffer                     
+        //usart1_putrxchar(data);     //Insert received character into buffer
     }
-		else
-		{;}
-			#endif
+    else
+    {
+        ;
+    }
+	#endif
 }
 
 /**
@@ -189,42 +188,31 @@ void USART1_IRQHandler(void)
   * @param  None
   * @retval : None
   */
-void LED_CmdCtl(void);
 void USART2_IRQHandler(void)
 {
-		unsigned int data;
-
+    unsigned int data;
+#if 1
     if(USART2->SR & 0x0F)
     {
         // See if we have some kind of error
         // Clear interrupt (do nothing about it!)
         data = USART2->DR;
     }
-		else if(USART2->SR & USART_FLAG_RXNE)   //Receive Data Reg Full Flag
-    {		
+    else if(USART2->SR & USART_FLAG_RXNE)   //Receive Data Reg Full Flag
+    {
+        //GPIO_SetBits(GPIOC,GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2|GPIO_Pin_3);
         data = USART2->DR;
-				usart2_rcv_buf[usart2_rcv_len++]=data;
-				
-				if(data=='{') //约定平台下发的控制命令以'{'为开始符，‘}’为控制命令结束符，读者可以自定义自己的开始符合结束符
-				{
-						rcv_cmd_start=1;
-				}
-				if(rcv_cmd_start==1)
-				{
-						usart2_cmd_buf[usart2_cmd_len++]=data;
-						if((data=='}')||(usart2_cmd_len>=MAX_CMD_LEN-1))
-						{
-								rcv_cmd_start=0;
-								LED_CmdCtl();
-								memset(usart2_cmd_buf,0,usart2_cmd_len);
-        				usart2_cmd_len=0;
-						}
-				}	  
+        usart2_rcv_buf[usart2_rcv_len++] = data;
+		if(usart2_rcv_len >= MAX_RCV_LEN - 1)
+			usart2_rcv_len = 0;
+        //usart1_rcv_buf[usart1_rcv_len++]=data;
+        //usart1_putrxchar(data);       //Insert received character into buffer
     }
-		else
-		{
-				;
-		}
+    else
+    {
+        ;
+    }
+#endif
 }
 
 /**
@@ -234,7 +222,7 @@ void USART2_IRQHandler(void)
   */
 void RTC_IRQHandler(void)
 {
-   
+
 }
 
 /**
@@ -248,7 +236,7 @@ void RTC_IRQHandler(void)
 
 /**
   * @}
-  */ 
+  */
 
 
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

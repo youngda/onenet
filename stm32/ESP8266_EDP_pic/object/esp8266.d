@@ -1,5 +1,6 @@
-..\object\esp8266.o: ..\Network\esp8266.c
-..\object\esp8266.o: ..\Driver\main.h
+..\object\esp8266.o: ..\Network\esp8266\esp8266.c
+..\object\esp8266.o: ..\Network\esp8266\esp8266.h
+..\object\esp8266.o: ..\Hal\usart2.h
 ..\object\esp8266.o: ..\Libraries\CMSIS\stm32f10x.h
 ..\object\esp8266.o: ..\Libraries\CMSIS\core_cm3.h
 ..\object\esp8266.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\stdint.h
@@ -29,15 +30,3 @@
 ..\object\esp8266.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 ..\object\esp8266.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 ..\object\esp8266.o: ..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
-..\object\esp8266.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\stdio.h
-..\object\esp8266.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\stdlib.h
-..\object\esp8266.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\string.h
-..\object\esp8266.o: ..\Driver\usart1.h
-..\object\esp8266.o: ..\Driver\usart2.h
-..\object\esp8266.o: ..\EDP\edpkit.h
-..\object\esp8266.o: ..\EDP\Common.h
-..\object\esp8266.o: ..\EDP\cJSON.h
-..\object\esp8266.o: F:\Program Files (x86)\keil\ARM\ARMCC\bin\..\include\time.h
-..\object\esp8266.o: ..\Driver\led.h
-..\object\esp8266.o: ..\Driver\key.h
-..\object\esp8266.o: ..\Network\esp8266.h
